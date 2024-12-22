@@ -35,7 +35,7 @@ izumi(
     );
   } catch (error) {
     console.error("Error:", error);
-    return await message.send("An error occurred while processing your request.");
+    return await message.sendMessage("An error occurred while processing your request.");
   }
 });
 izumi(

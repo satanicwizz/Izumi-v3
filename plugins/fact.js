@@ -1,11 +1,12 @@
 const { izumi, mode, getJson } = require("../lib/");
+const config = require("../config");
 
 izumi(
     {
         pattern: "fact",
         fromMe: mode,
         desc: "fact commands",
-        type: "user",
+        type: "info",
     },
     async (message) => {
         try {
@@ -40,7 +41,7 @@ izumi(
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363298577467093@newsletter',
-                        newsletterName: "Iᴢᴜᴍɪ-ᴠ3",
+                        newsletterName: config.BOT_NAME,
                         serverMessageId: -1
                     }
                 }
@@ -67,7 +68,7 @@ const fetchFact = async (url, formattedMessage, message) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363298577467093@newsletter',
-                    newsletterName: "Iᴢᴜᴍɪ-ᴠ3",
+                    newsletterName: config.BOT_NAME,
                     serverMessageId: -1
                 }
             }
@@ -84,11 +85,11 @@ izumi(
         pattern: "animal-fact",
         fromMe: mode,
         desc: "Fact about animals",
-        type: "user",
+        type: "info",
     },
     async (message) => {
         await fetchFact(
-            "https://api-eypz.onrender.com/details/animals",
+            eypzApi + "details/animals",
             "🐾 **Here is your Animal Fact** 🐾",
             message
         );
@@ -100,11 +101,11 @@ izumi(
         pattern: "tech-fact",
         fromMe: mode,
         desc: "Fact about technology",
-        type: "user",
+        type: "info",
     },
     async (message) => {
         await fetchFact(
-            "https://api-eypz.onrender.com/details/technology",
+            eypzApi + "details/technology",
             "💻 **Here is your Technology Fact** 💻",
             message
         );
@@ -116,11 +117,11 @@ izumi(
         pattern: "space-fact",
         fromMe: mode,
         desc: "Fact about space",
-        type: "user",
+        type: "info",
     },
     async (message) => {
         await fetchFact(
-            "https://api-eypz.onrender.com/details/space",
+            eypzApi + "details/space",
             "🛰️ **Here is your Space Fact** ☄️",
             message
         );
@@ -132,11 +133,11 @@ izumi(
         pattern: "history-fact",
         fromMe: mode,
         desc: "Fact about history",
-        type: "user",
+        type: "info",
     },
     async (message) => {
         await fetchFact(
-            "https://api-eypz.onrender.com/details/history",
+            eypzApi + "details/history",
             "📖 **Here is your History Fact** 📖",
             message
         );
@@ -148,11 +149,11 @@ izumi(
         pattern: "cat-fact",
         fromMe: mode,
         desc: "Fact about cats",
-        type: "user",
+        type: "info",
     },
     async (message) => {
         await fetchFact(
-            "https://api-eypz.onrender.com/cat-fact",
+            eypzApi + "cat-fact",
             "🐱 **Here is your Cat Fact** 🐱",
             message
         );

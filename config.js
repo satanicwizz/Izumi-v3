@@ -12,6 +12,7 @@ function convertToBool(text, fault = 'true') {
 // Function to convert string to boolean
 const toBool = (x) => (x && x.toLowerCase() === 'true') || false;
 global.apiUrl = 'https://api.maskser.me/'
+global.eypzApi = 'https://combative-sarine-eypz-god-d4cce0fc.koyeb.app/'
 
 // Define the Sequelize instance based on DATABASE_URL
 const DATABASE_URL = process.env.DATABASE_URL === undefined ? './database.db' : process.env.DATABASE_URL;
@@ -25,7 +26,7 @@ module.exports = {
   LOG_MSG: toBool(process.env.LOG_MSG) || true,
   READ_CMD: toBool(process.env.READ_CMD),
   SESSION_ID: process.env.SESSION_ID || "Session id",
-  MENU_URL: process.env.MENU_URL || "https://i.imgur.com/cO0TZJv.jpeg",
+  MENU_URL: process.env.MENU_URL || "https://ik.imagekit.io/eypz/1722873079279_lHOJlrddC.png",
   CAPTION: process.env.CAPTION || "Iᴢᴜᴍɪ",
   READ_MSG: toBool(process.env.READ_MSG),
   OWNER_NAME: process.env.OWNER_NAME || "Eypz God",
@@ -39,6 +40,9 @@ module.exports = {
   DELETED_LOG_CHAT: process.env.DELETED_LOG_CHAT || false,
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || "",
+  KOYEB_API_KEY: process.env.KOYEB_API_KEY || "your_koyeb_api_key",
+  KOYEB_APP_NAME: process.env.KOYEB_APP_NAME || '',
+  KOYEB: toBool(process.env.KOYEB) || false,
   HEROKU: toBool(process.env.HEROKU) || false,
   TERMUX: toBool(process.env.TERMUX) || false,
   DATABASE_URL: DATABASE_URL,
